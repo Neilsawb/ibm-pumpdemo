@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Toggle } from "carbon-components-react";
 import { Slider } from "carbon-components-react";
@@ -17,27 +17,7 @@ function PumpFanValveStates(props) {
         var fanSpeed = sensors.fanSpeed
         var pumpSpeed = sensors.pumpSpeed
     } 
-
-    const [value, setValue] = useState(pumpSpeed);
    
-    var globalDrainValue;
-        
-    const handlePumpChange = (e) => {
-        console.log("handle Pump change: %s", e.value);
-        setValue(e.value);
-        props.changePumpSpeed(value);
-    }
-
-    const handleFanChange = (e) => {
-        console.log("handle Fan change: %s", e.fanSpeed);
-        props.changeFanSpeed(e.fanSpeed);
-    }
-
-    const handleFlushChange = (e) => {
-        console.log("handle Flush change: %s", e.drainValue);
-        props.changePumpSpeed(globalDrainValue);
-    }
-
     return(
         <h3>Location:&nbsp;{location}&nbsp;&nbsp;&nbsp;Id&nbsp;:&nbsp;{id}&nbsp;&nbsp;
         <br></br><br></br>

@@ -63,12 +63,14 @@ function SendButtonPressedMessage(inputState,msgType){
     case 'PumpSpeed':
         console.log('pump speed input: %s', inputState);
         pwmValue = convertInputToPWMValue(inputState,0,3000,0,255);
+        pwmValue = pwmValue.toFixed(2);
         newmsg = "POTA" + pwmValue ;
         console.log('%s', newmsg);
         break;
     case 'FanSpeed':
         console.log('fan speed input: %s', inputState);
         pwmValue = convertInputToPWMValue(inputState,0,1900,0,255);
+        pwmValue = pwmValue.toFixed(2);
         newmsg = "POTB" + pwmValue ;
         console.log('%s', newmsg);
         break;

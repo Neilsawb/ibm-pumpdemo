@@ -11,8 +11,8 @@ function PumpFanValveStates(props) {
         var pumpState = sensors.pumpState
         var location = sensors.location
         var id = sensors.id
-        //var fanState = sensors.fanState
-        //var drainState = sensors.drainStateValve
+        var fanState = sensors.fanState
+        var drainState = sensors.drainStateValve
         //var safetyState = sensors.safetyStateValve
         var fanSpeed = sensors.fanSpeed
         var pumpSpeed = sensors.pumpSpeed
@@ -21,12 +21,7 @@ function PumpFanValveStates(props) {
     const [value, setValue] = useState(pumpSpeed);
    
     var globalDrainValue;
-    /*const handlePumpState = (e) => {
-        console.log("handle pump state: %s", );
-        //setToggled(e.Toggle);
-        props.changePumpState(e.Toggle);
-    } */
-    
+        
     const handlePumpChange = (e) => {
         console.log("handle Pump change: %s", e.value);
         setValue(e.value);
@@ -35,13 +30,11 @@ function PumpFanValveStates(props) {
 
     const handleFanChange = (e) => {
         console.log("handle Fan change: %s", e.fanSpeed);
-        //setGlobalFanSpeed(e.fanSpeed);
         props.changeFanSpeed(e.fanSpeed);
     }
 
     const handleFlushChange = (e) => {
         console.log("handle Flush change: %s", e.drainValue);
-        //setGlobalDrainValue(e.drainValue);
         props.changePumpSpeed(globalDrainValue);
     }
 
@@ -63,6 +56,7 @@ function PumpFanValveStates(props) {
                 aria-label="toggle button"
                 id="toggle-2"
                 labelText="Fan"
+                toggled={fanState}
                 onToggle={(FanToggle) => props.changeFanToggleState(FanToggle)}
             /></div>   
             </ErrorBoundary>
@@ -71,6 +65,7 @@ function PumpFanValveStates(props) {
                 aria-label="toggle button"
                 id="toggle-3"
                 labelText="Flush"
+                toggled={drainState}
                 onToggle={(FlushToggle) => props.changeFlushToggleState(FlushToggle)}
             /></div>
             </ErrorBoundary>

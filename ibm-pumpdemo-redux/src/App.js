@@ -149,10 +149,6 @@ function App() {
         safetyStateValve: SafetyValveState}))
   }
   
-// <head><meta http-equiv="refresh" content="60"></meta></head>
-//  <PumpFanValveStates changePumpToggleState={toggled => setGlobalPumpState(toggled)}
-
-  
   return (
     <div>
       <div className="App"><h2>Pump Demo</h2>

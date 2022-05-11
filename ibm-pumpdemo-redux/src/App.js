@@ -149,7 +149,10 @@ function App() {
         safetyStateValve: SafetyValveState}))
   }
 
-  
+  // <div className="grid-item"><TempGraph /></div>
+  // <div className="grid-item"><TinyDBGraph /></div>
+  // <div className="grid-item"><TempHistogram /></div>
+
   
   return (
     <div>
@@ -170,9 +173,6 @@ function App() {
           <div className="grid-item"><FlowOne /></div>
           <div className="grid-item"><FlowTwo /></div>
           <div className="grid-item"><FlowThree /></div>
-          <div className="grid-item"><TempGraph /></div>
-          <div className="grid-item"><TinyDBGraph /></div>
-          <div className="grid-item"><TempHistogram /></div>
         </div>
       </div>
     </div>

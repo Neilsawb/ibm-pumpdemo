@@ -40,15 +40,6 @@ function PumpFanValveStates(props) {
                 onToggle={(FanToggle) => props.changeFanToggleState(FanToggle)}
             /></div>   
             </ErrorBoundary>
-            <ErrorBoundary>       
-            <div className="grid-item-hdrx"><Toggle 
-                aria-label="toggle button"
-                id="toggle-3"
-                labelText="Flush"
-                toggled={drainState}
-                onToggle={(FlushToggle) => props.changeFlushToggleState(FlushToggle)}
-            /></div>
-            </ErrorBoundary>
             <ErrorBoundary>
             <div className="grid-item-hdrx">
             <Slider
@@ -76,21 +67,6 @@ function PumpFanValveStates(props) {
                 value={fanSpeed}
                 onChange={(e) => props.changeFanSpeed(e.value)}
             /></div>
-            </ErrorBoundary>
-            <ErrorBoundary>
-                <div className='grid-item-hdrx'>
-                <Slider
-                    ariaLabelInput="1 - 100"
-                    id="slider3"
-                    labelText="Flush"
-                    max={100}
-                    min={1}
-                    step={5}
-                    stepMultiplier={4}
-                    value= {0}
-                    onChange={(e) => props.changePumpSpeed(e.value)}
-                />
-                </div>
             </ErrorBoundary>
         </div>
         </h3>
